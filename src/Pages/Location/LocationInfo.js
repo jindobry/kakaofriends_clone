@@ -1,6 +1,6 @@
-import React from "react";
-import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
-import "./LocationInfo.scss";
+import React from 'react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+import './LocationInfo.scss';
 
 class LocationInfo extends React.Component {
   render() {
@@ -53,7 +53,7 @@ class LocationInfo extends React.Component {
                 initialCenter={{ lat: latitude, lng: longitude }}
               >
                 <Marker
-                  title={"LEEYEONSEONG"}
+                  title={'LEEYEONSEONG'}
                   name={"KAKAOFRIEND's Shop"}
                   position={{ lat: latitude, lng: longitude }}
                 />
@@ -67,12 +67,12 @@ class LocationInfo extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyD_OTGEAMBOHRJRlP891YETExxSwn_0bJ8",
+  apiKey: '1',
 })(LocationInfo);
 
 const mapStyle = {
-  width: "500px",
-  height: "200px",
-  right: "36px",
-  top: "44px",
+  width: '500px',
+  height: '200px',
+  right: '36px',
+  top: '44px',
 };
