@@ -1,0 +1,485 @@
+@import "../../Styles/common.scss";
+@import "../../Styles/reset.scss";
+
+.Cart {
+  .EmptyCart {
+    @include flexBox(flex-start, center, column);
+    margin: 0 auto;
+    padding: 0;
+    width: 1777px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+
+    .cartHeader {
+      width: 1080px;
+      height: 150px;
+      margin: 66px auto 0;
+      padding: 56px 0 34px 0;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.67;
+      letter-spacing: -0.36px;
+    }
+
+    .emptyBasket {
+      padding: 0px;
+      bottom: 5000px;
+      width: 1080px;
+      height: 302px;
+      border-top: 1px solid #e2e5e8;
+      border-bottom: 1px solid #e2e5e8;
+
+      .emptyCartMessage {
+        margin: 0 411px;
+        padding-top: 98px;
+        padding-bottom: 25px;
+        width: 258px;
+        height: 167px;
+        color: #9a9a9e;
+        font-size: 15px;
+        letter-spacing: -0.19px;
+        text-align: center;
+        line-height: 1.47;
+      }
+
+      .linkButton {
+        @include flexBox(center, center, default);
+        width: 140px;
+        height: 36px;
+        margin: 0px auto;
+        border-radius: 4px;
+        background-color: #3c404b;
+      }
+
+      .linkMessage {
+        width: 100px;
+        height: 16px;
+        color: #ffffff;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: -0.2px;
+        line-height: normal;
+      }
+    }
+  }
+
+  .FilledCart {
+    @include flexBox(center, center, column);
+    margin: 0 auto;
+    padding: 0;
+    width: 1777px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+
+    .cartHeaderWrap {
+      width: 1080px;
+      height: 188px;
+
+      .cartHeader {
+        width: 1080px;
+        height: 150px;
+        padding: 56px 0 34px 0;
+        color: #000000;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 1.67;
+        letter-spacing: -0.36px;
+      }
+
+      .filledCartHeader {
+        @include flexBox(space-between, default, default);
+        position: static;
+        left: 0px;
+        right: 0px;
+        padding: 0px 0px 8px;
+        width: 1080px;
+        height: 38px;
+        background: #ffffff;
+
+        .subHeader {
+          @include flexBox(default, center, default);
+          width: 540px;
+          height: 30px;
+
+          .checker {
+            width: 30px;
+            height: 25px;
+            margin-right: 10px;
+            background-size: 25px 25px;
+            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
+              center center / 80% no-repeat;
+            cursor: default;
+            content: "";
+
+            &.unchecked {
+              background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
+                center center / 80% no-repeat;
+            }
+
+            input:checked[type="checkbox"] {
+              display: none;
+              margin-right: 10px;
+              width: 30px;
+              height: 25px;
+              color: #1e1e1e;
+              background-color: #ffffff;
+              line-height: 21px;
+            }
+          }
+
+          .total {
+            display: flex;
+            padding-top: 0px;
+            height: 30px;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.5;
+            letter-spacing: -0.2px;
+          }
+
+          .null {
+            width: 7.5px;
+            height: 30px;
+            padding-top: 5px;
+            line-height: 1.5;
+          }
+
+          .totalCount {
+            height: 30px;
+            color: #333333;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.5;
+          }
+        }
+
+        .headerDelete {
+          @include flexBox(flex-end, default, default);
+          vertical-align: middle;
+          width: 540px;
+          height: 30px;
+
+          .delete {
+            padding-right: 8px;
+            color: #666666;
+            font-size: 15px;
+            letter-spacing: -0.2px;
+            line-height: 32px;
+          }
+
+          .deleteButton {
+            width: 16px;
+            height: 30px;
+            padding: 0px;
+            background: url("https://t1.kakaocdn.net/friends/new_store/2.0/basket/trashcan-btn.png")
+              center center / 100% no-repeat;
+            background-size: 16px 17px;
+            border: none;
+            font-size: 14px;
+            line-height: 21px;
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .filledCartWrap {
+      width: 1080px;
+      padding: 0px;
+      background-color: #ffffff;
+      border-top: 0px;
+      border-bottom: 0px;
+
+      .totalPriceBox {
+        @include flexBox(default, center, default);
+        padding: 0px 86.5px 0px 33px;
+        margin-bottom: 51px;
+        width: 1080px;
+        height: 171px;
+        background-color: #f7f7f7;
+        border-top: 1px solid #000000;
+
+        .totalPriceBarWrap {
+          @include flexBox(flex-start, center, default);
+          width: 480.25px;
+          height: 35px;
+          color: #1e1e1e;
+          font-size: 14px;
+          line-height: 1.5;
+
+          .deliveryCountry {
+            font-size: 15px;
+            line-height: 30px;
+            letter-spacing: -0.19px;
+          }
+
+          .selectBox {
+            margin-left: 26px;
+            width: 201px;
+
+            .selectBoxLabel::before {
+              content: "한국";
+              position: absolute;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            .selectBoxLabel {
+              width: 199px;
+              height: 33px;
+              left: 0px;
+              top: 0px;
+              padding-left: 10px;
+              border: 1px solid #e2e5e8;
+              border-radius: 4px;
+              font-size: 14px;
+              outline: none;
+              z-index: 100;
+            }
+          }
+        }
+
+        .totalPrice {
+          @include flexBox(space-between, center, default);
+          display: flex;
+          display: block;
+          width: 480.25px;
+          height: 138px;
+          color: #1e1e1e;
+          font-size: 14px;
+          line-height: 1.5;
+
+          .totalOrder,
+          .deliveryFee,
+          .totalFee {
+            padding-top: 9px;
+          }
+
+          .totalOrder {
+            @include flexBox(space-between, center, row);
+            width: 480.25px;
+            height: 40px;
+
+            .totalPriceLabel {
+              width: auto;
+              height: 30px;
+              font-size: 15px;
+            }
+
+            .totalPriceWon {
+              @include flexBox(flex-end, default, default);
+              text-align: right;
+              font-size: 20px;
+              font-weight: bold;
+              line-height: 1.5;
+              letter-spacing: -0.25px;
+              text-align: right;
+            }
+          }
+
+          .deliveryFee {
+            @include flexBox(space-between, center, row);
+            width: 480.25px;
+            height: 40px;
+            .deliveryFeeLabel {
+              font-size: 15px;
+            }
+
+            .deliveryFeeWon {
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+
+          .totalFee {
+            @include flexBox(space-between, center, row);
+            width: 480.25px;
+            height: 58px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: -0.25px;
+            text-align: right;
+
+            .totalFeeLabel {
+              font-size: 20px;
+            }
+            .totalFeeWon {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+
+      .filledCartDetail {
+        .filledCartDetailHeader {
+          @include flexBox(space-between, default, default);
+          width: 1080px;
+          height: 53px;
+          padding: 16px;
+          margin: auto;
+          background-color: #ffffff;
+          border-top: 1px solid #000000;
+          border-bottom: 1px solid #e3e5e8;
+
+          .productName,
+          .option,
+          .quantity,
+          .price {
+            font-size: 13px;
+            text-align: center;
+            line-height: 19.5px;
+            letter-spacing: -0.19px;
+            text-align: center;
+          }
+
+          .productName {
+            width: 287px;
+            height: 19px;
+            padding-left: 130px;
+          }
+
+          .option {
+            width: 317px;
+            height: 19px;
+            padding-left: 160px;
+          }
+
+          .quantity {
+            width: 207px;
+            height: 19px;
+            padding-left: 50px;
+          }
+
+          .price {
+            width: 207px;
+            height: 19px;
+            padding-right: 50px;
+          }
+        }
+      }
+
+      .cartItemWrapper {
+        width: 1080px;
+        height: 130px;
+        margin: auto;
+        border-bottom: 1px solid #e2e5e8;
+
+        .cartItemWrap {
+          @include flexBox(default, center, default);
+          padding-left: 20px;
+
+          .itemChecker {
+            width: 30px;
+            height: 25px;
+            margin-right: 10px;
+            background-size: 25px 25px;
+            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
+              center center / 80% no-repeat;
+            content: "";
+
+            &.unchecked {
+              background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
+                center center / 80% no-repeat;
+            }
+
+            .itemCheckBox {
+              display: none;
+              width: 30px;
+              height: 25px;
+              margin-right: 10px;
+              color: #1e1e1e;
+              background-color: #ffffff;
+              line-height: 21px;
+            }
+          }
+
+          .thumbnailImage {
+            width: 100px;
+            height: 100px;
+            margin-right: 14px;
+            background: rgba(0, 0, 0, 0.02);
+          }
+
+          .itemTitle {
+            @include flexBox(space-between, center, default);
+            width: 906.63px;
+            height: 35px;
+            margin: 47.5px 0px;
+            padding: 0px;
+            font-size: 15px;
+
+            .titleItemTitle {
+              max-width: 304px;
+              width: 100%;
+              height: unset;
+              font-size: 15px;
+              line-height: 1.47;
+              letter-spacing: -0.19px;
+            }
+
+            .choiceWrap {
+              @include flexBox(space-between, default, default);
+              width: 646px;
+
+              .optionButton {
+                width: 138px;
+                height: 33px;
+                margin-left: 50px;
+              }
+
+              .optionWrap {
+                padding-left: 40px;
+                width: 160px;
+                border-width: 0px 1px;
+
+                .selectQuantity {
+                  padding-left: 10px;
+                  width: 78px;
+                  height: 33px;
+                  box-sizing: border-box;
+                  border: 1px solid #e2e5e8;
+                  border-radius: 4px;
+                  outline: none;
+                }
+              }
+
+              .removeButton {
+                align-self: center;
+                vertical-align: middle;
+                width: 13px;
+                height: 13px;
+                background-size: 13px;
+                background: url(https://t1.kakaocdn.net/friends/new_store/btn_remove.png)
+                  center center / 100% no-repeat;
+                border: none;
+                font-size: 1px;
+                cursor: pointer;
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .orderButtonWrap {
+      width: 1080px;
+      height: 60px;
+      text-align: center;
+      justify-content: center;
+
+      .orderButton {
+        width: 270px;
+        height: 60px;
+        border: none;
+        border-radius: 4px;
+        background-color: #3c404b;
+        opacity: 95%;
+        color: #ffffff;
+        font-size: 15px;
+        line-height: 22.5px;
+      }
+    }
+  }
+}

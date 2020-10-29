@@ -1,0 +1,36 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+body {
+  // width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+// variables
+$breakpoint-tablet: 770px;
+
+@mixin tab {
+  @media screen and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin flexBox($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// colors
+$alert: #ff6129;
+$point: #ff447e;
+$subtext: #9a9a9e;
+$subBlack: #1e1e1e;
+$kakaoYellow: #ffe500;
+$buttonGray: #f6f6f6;
+$footerUpperColor: #3c404b;
+$footerBottomColor: #2e2e2e;
